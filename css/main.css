@@ -1,0 +1,201 @@
+
+/*clearfix*/
+
+.clearfix:before,
+.clearfix:after {
+	content: "";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+.clearfix {
+	clear: both;
+}
+
+/*base*/
+html, body {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font: 14px/1.4 Arial, Helvetica, sans-serif;
+	color: #111;
+}
+
+/*weather*/
+
+#weather .item {
+	background: #fcda6f;
+}
+#weather .item .content {
+	display: none;
+}
+#weather .item.active .content {
+	display: block;
+}
+#weather .item  header,
+#weather .item .content {
+	color: #fefdff;
+	font-size: 28px;
+	height: 94px;
+}
+#weather .item header h1 {
+	font-size: 30px;
+	margin: 0;
+	padding-left: 30px;
+	line-height: 94px;
+    background-image: url("../img/arrow-icon.png");
+    background-repeat: no-repeat;
+    background-position: 48% center;
+}
+
+#weather .item  header .secondary-content {
+	float: right;
+	height: 100%;
+	text-align: center;
+}
+
+
+#weather .item  header .secondary-content span,
+#weather .item  header .secondary-content p {
+	display: block;
+	float: left;
+	width: 104px;
+	height: 100%;
+	margin: 0;
+}
+#weather .item  header .secondary-content p {
+	box-sizing: border-box;
+	padding-top: 32px;
+	line-height: 25px;
+}
+
+#weather .item header .secondary-content p small,
+#weather .item .content .primary-content p small {
+	font-size: 9px;
+	vertical-align: top;
+	margin-right: 8px;
+}
+#weather .item  header .secondary-content .weather-icon {
+	background-image: url("../img/weather-sunny.png");
+	background-repeat: no-repeat;
+	background-size: 45px;
+	background-position: center;
+}
+
+#weather .item:nth-child(1) {
+	background-color: #fcda6f;
+}
+#weather .item:nth-child(1)  header .secondary-content .temp-high {
+	background-color: #ffdc7b;
+}
+#weather .item:nth-child(2) {
+	background-color: #c7c9a2;
+}
+#weather .item:nth-child(2)  header .secondary-content .temp-high {
+	background-color: #cdceac;
+}
+#weather .item:nth-child(3) {
+	background-color: #bbcbca;
+}
+#weather .item:nth-child(3)  header .secondary-content .temp-high {
+	background-color: #c4d0d0;
+}
+#weather .item:nth-child(4) {
+	background-color: #a7b7b6;
+}
+#weather .item:nth-child(4)  header .secondary-content .temp-high {
+	background-color: #b0bcbc;
+}
+#weather .item:nth-child(5) {
+	background-color: #c7c9a2;
+}
+#weather .item:nth-child(5)  header .secondary-content .temp-high {
+	background-color: #cdceac;
+}
+#weather .item:nth-child(6) {
+	background-color: #fcda6f;
+}
+#weather .item:nth-child(6)  header .secondary-content .temp-high {
+	background-color: #ffdc7b;
+}
+#weather .item:nth-child(7) {
+	background-color: #ffbb53;
+}
+#weather .item:nth-child(7)  header .secondary-content .temp-high {
+	background-color: #fdc15f;
+}
+
+
+/******slide open weather info******/
+#weather .item .content {
+	height: 376px;
+}
+#weather .item .content .primary-content {
+	background-color: #c0c0c0;
+	float: right;
+	list-style: none;
+	width: 50%;
+	margin: 0;
+	padding-left: 0;
+}
+
+#weather .item .content .primary-content li p {
+	display: inline-block;
+	margin: 0;
+	line-height: 94px;
+	float: left;
+
+}
+#weather .item .content .primary-content li {
+	height: 94px;
+}
+#weather .item .content .primary-content li .title {
+	padding-left: 20px;
+
+}
+#weather .item .content .primary-content li .temp-high,
+#weather .item .content .primary-content li .temp-low {
+	float: right;
+	box-sizing: border-box;
+	padding-right: 35px;
+	padding-top: 32px;
+	line-height: 25px;
+	text-align: center;
+}
+#weather .item .content .primary-content li:nth-child(1) {
+	background-color: #fcda6f;
+}
+#weather .item .content .primary-content li:nth-child(2) {
+	background-color: #ffbb53;
+}
+#weather .item .content .primary-content li:nth-child(3) {
+	background-color: #c7c9a2;
+}
+#weather .item .content .primary-content li:nth-child(4) {
+	background-color: #bbcbca;
+}
+
+#weather .item .content .secondary-content {
+	background-color: #ffbb53;
+	float: left;
+	width: 50%;
+	height: 100%;
+	margin: 0;
+	text-align: center;
+}
+#weather .secondary-content .weather-temp {
+    margin-top: 0;
+    padding-bottom: 25px;
+    background-image: url("../img/arrow-icon.png");
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+}
+
+#weather .secondary-content .weather-temp strong{
+    font-weight: 400;
+    font-size: 38px;
+}
+
+
