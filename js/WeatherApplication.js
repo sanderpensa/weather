@@ -24,9 +24,12 @@
 	};
 
 	WeatherApplication.prototype._setupUI = function(weatherDays) {
-		var i;
+		var today = new Date(),
+			i;
 
 		console.log('setting up ui', weatherDays);
+
+		console.log(today.getDay());
 
 		/*for (i = 0; i < weatherDays.length; i++) {
 			this._ui._renderWeatherDay(weatherDays[i]);

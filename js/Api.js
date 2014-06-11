@@ -8,7 +8,8 @@
 
 	Api.prototype.getWeatherInfo = function(location) {
 		var deferred = $.Deferred(),
-			weatherInfo;
+			weatherInfo,
+			i;
 
 		$.ajax({
 				url: 'http://api.worldweatheronline.com/free/v1/weather.ashx',
@@ -24,9 +25,24 @@
 			.done(function(response) {
 				console.log('response', response);
 
-				weatherInfo = {
-					temp: parseInt(response.data.current_condition[0].temp_C, 10)
-				};
+				weatherInfo = [];
+
+				for (i = 0; i < response.data.weather.length; i++) {
+					if (i === 0) {
+						weatherInfo.push({
+							date: new Date(response.data.weather[i].date),
+							currentTemp: parseInt(response.data.current_condition[i].temp_C),
+							maxTemp: parseInt(response.data.weather[i].tempMaxC),
+							minTemp: parseInt(response.data.weather[i].tempMinC)
+						});
+					} else {
+						weatherInfo.push({
+							date: new Date(response.data.weather[i].date),
+							maxTemp: parseInt(response.data.weather[i].tempMaxC),
+							minTemp: parseInt(response.data.weather[i].tempMinC)
+						});
+					}
+				}
 
 				deferred.resolve(weatherInfo);
 			}.bind(this))
