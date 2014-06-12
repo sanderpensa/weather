@@ -1,4 +1,4 @@
-(function(exports, $, Api) {
+(function(exports, $, Api, Ui) {
 	'use strict';
 
 	var WeatherApplication = function() {
@@ -24,16 +24,15 @@
 	};
 
 	WeatherApplication.prototype._setupUI = function(weatherDays) {
-		var today = new Date(),
-			i;
+		this._ui = new Ui();
+
+		var i;
 
 		console.log('setting up ui', weatherDays);
 
-		console.log(today.getDay());
-
-		/*for (i = 0; i < weatherDays.length; i++) {
+		for (i = 0; i < weatherDays.length; i++) {
 			this._ui._renderWeatherDay(weatherDays[i]);
-		}*/
+		}
 
 		// opens day tab, closing existing one
 		$('.day-tab').click(function() {
@@ -69,4 +68,4 @@
 	};
 
 	exports.WeatherApplication = WeatherApplication;
-})(window, jQuery, window.Api);
+})(window, jQuery, window.Api, window.Ui);

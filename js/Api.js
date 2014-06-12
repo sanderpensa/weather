@@ -1,7 +1,8 @@
 (function(exports, $) {
 	'use strict';
 
-	// 01cffb53e8840e059fbe9e424dba2bbdc36d132c
+	// Free key: 01cffb53e8840e059fbe9e424dba2bbdc36d132c
+	// Premium key 60days trial 5bc75fc3d43ea3ac2c1682527555f9aa1945b922
 	var Api = function() {
 
 	};
