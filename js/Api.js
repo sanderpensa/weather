@@ -13,14 +13,14 @@
 			i;
 
 		$.ajax({
-				url: 'http://api.worldweatheronline.com/free/v1/weather.ashx',
+				url: 'http://api.worldweatheronline.com/premium/v1/weather.ashx',
 				method: 'get',
 				dataType: 'json',
 				data: {
 					q: location,
 					format: 'json',
 					num_of_days: 5,
-					key: '01cffb53e8840e059fbe9e424dba2bbdc36d132c'
+					key: '5bc75fc3d43ea3ac2c1682527555f9aa1945b922'
 				}
 			})
 			.done(function(response) {
@@ -32,15 +32,60 @@
 					if (i === 0) {
 						weatherInfo.push({
 							date: new Date(response.data.weather[i].date),
+							location: response.data.request[0].query,
 							currentTemp: parseInt(response.data.current_condition[i].temp_C),
-							maxTemp: parseInt(response.data.weather[i].tempMaxC),
-							minTemp: parseInt(response.data.weather[i].tempMinC)
+							maxTemp: parseInt(response.data.weather[i].maxtempC),
+							minTemp: parseInt(response.data.weather[i].mintempC),
+							morningLo: parseInt(response.data.weather[i].hourly[1].tempC),
+							morningHi: parseInt(response.data.weather[i].hourly[3].tempC),
+							afternoonLo: parseInt(response.data.weather[i].hourly[4].tempC),
+							afternoonHi: parseInt(response.data.weather[i].hourly[5].tempC),
+							eveningLo: parseInt(response.data.weather[i].hourly[7].tempC),
+							eveningHi: parseInt(response.data.weather[i].hourly[6].tempC),
+							overnightLo: parseInt(response.data.weather[i+1].hourly[0].tempC),
+							overnightHi: parseInt(response.data.weather[i+1].hourly[1].tempC),
+							weatherMorning: response.data.weather[i].hourly[2].weatherDesc[0].value,
+							weatherAfternoon: response.data.weather[i].hourly[4].weatherDesc[0].value,
+							weatherEvening: response.data.weather[i].hourly[5].weatherDesc[0].value,
+							weatherOvernight: response.data.weather[i+1].hourly[0].weatherDesc[0].value
+						});
+					} else if (i + 1 < response.data.weather.length) {
+						weatherInfo.push({
+							date: new Date(response.data.weather[i].date),
+							location: response.data.request[0].query,
+							maxTemp: parseInt(response.data.weather[i].maxtempC),
+							minTemp: parseInt(response.data.weather[i].mintempC),
+							morningLo: parseInt(response.data.weather[i].hourly[1].tempC),
+							morningHi: parseInt(response.data.weather[i].hourly[3].tempC),
+							afternoonLo: parseInt(response.data.weather[i].hourly[4].tempC),
+							afternoonHi: parseInt(response.data.weather[i].hourly[5].tempC),
+							eveningLo: parseInt(response.data.weather[i].hourly[7].tempC),
+							eveningHi: parseInt(response.data.weather[i].hourly[6].tempC),
+							overnightLo: parseInt(response.data.weather[i+1].hourly[0].tempC),
+							overnightHi: parseInt(response.data.weather[i+1].hourly[1].tempC),
+							weatherMorning: response.data.weather[i].hourly[2].weatherDesc[0].value,
+							weatherAfternoon: response.data.weather[i].hourly[4].weatherDesc[0].value,
+							weatherEvening: response.data.weather[i].hourly[5].weatherDesc[0].value,
+							weatherOvernight: response.data.weather[i+1].hourly[0].weatherDesc[0].value
 						});
 					} else {
 						weatherInfo.push({
 							date: new Date(response.data.weather[i].date),
-							maxTemp: parseInt(response.data.weather[i].tempMaxC),
-							minTemp: parseInt(response.data.weather[i].tempMinC)
+							location: response.data.request[0].query,
+							maxTemp: parseInt(response.data.weather[i].maxtempC),
+							minTemp: parseInt(response.data.weather[i].mintempC),
+							morningLo: parseInt(response.data.weather[i].hourly[1].tempC),
+							morningHi: parseInt(response.data.weather[i].hourly[3].tempC),
+							afternoonLo: parseInt(response.data.weather[i].hourly[4].tempC),
+							afternoonHi: parseInt(response.data.weather[i].hourly[5].tempC),
+							eveningLo: parseInt(response.data.weather[i].hourly[7].tempC),
+							eveningHi: parseInt(response.data.weather[i].hourly[6].tempC),
+							overnightLo: 'Na',
+							overnightHi: 'Na',
+							weatherMorning: response.data.weather[i].hourly[2].weatherDesc[0].value,
+							weatherAfternoon: response.data.weather[i].hourly[4].weatherDesc[0].value,
+							weatherEvening: response.data.weather[i].hourly[5].weatherDesc[0].value,
+							weatherOvernight: 'Na'
 						});
 					}
 				}
