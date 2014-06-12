@@ -24,9 +24,9 @@
 	};
 
 	WeatherApplication.prototype._setupUI = function(weatherDays) {
-		this._ui = new Ui();
-
 		var i;
+
+		this._ui = new Ui();
 
 		console.log('setting up ui', weatherDays);
 
