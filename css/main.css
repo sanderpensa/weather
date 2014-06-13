@@ -25,29 +25,15 @@ body {
 
 /*weather*/
 
-#weather .item {
-	background: #fcda6f;
-}
-#weather .item .content {
-	display: none;
-}
-#weather .item.active .content {
-	display: block;
-}
+
 #weather .item  header,
 #weather .item .content {
 	color: #fefdff;
 	font-size: 28px;
 	height: 94px;
 }
-#weather .item header h1 {
-	font-size: 30px;
-	margin: 0;
-	padding-left: 30px;
-	line-height: 94px;
-    background-image: url("../img/arrow-icon.png");
-    background-repeat: no-repeat;
-    background-position: 48% center;
+#weather .item {
+	background: #fcda6f;
 }
 
 #weather .item  header .secondary-content {
@@ -55,7 +41,22 @@ body {
 	height: 100%;
 	text-align: center;
 }
+#weather .item header h1 {
+	font-size: 30px;
+	margin: 0;
+	padding-left: 30px;
+	line-height: 94px;
+	background-image: url("../img/arrow-icon.png");
+	background-repeat: no-repeat;
+	background-position: 48% center;
+}
 
+#weather .item .content {
+	display: none;
+}
+#weather .item.active .content {
+	display: block;
+}
 
 #weather .item  header .secondary-content span,
 #weather .item  header .secondary-content p {
@@ -78,7 +79,7 @@ body {
 	margin-right: 8px;
 }
 #weather .item  header .secondary-content .weather-icon {
-	background-image: url("../img/weather-sunny.png");
+	/*background-image: url("../img/weather-sunny.png");*/
 	background-repeat: no-repeat;
 	background-size: 45px;
 	background-position: center;
@@ -87,43 +88,43 @@ body {
 #weather .item:nth-child(1) {
 	background-color: #fcda6f;
 }
-#weather .item:nth-child(1)  header .secondary-content .temp-high {
+#weather .item:nth-child(1)  header .secondary-content .temp-low {
 	background-color: #ffdc7b;
 }
 #weather .item:nth-child(2) {
 	background-color: #c7c9a2;
 }
-#weather .item:nth-child(2)  header .secondary-content .temp-high {
+#weather .item:nth-child(2)  header .secondary-content .temp-low {
 	background-color: #cdceac;
 }
 #weather .item:nth-child(3) {
 	background-color: #bbcbca;
 }
-#weather .item:nth-child(3)  header .secondary-content .temp-high {
+#weather .item:nth-child(3)  header .secondary-content .temp-low {
 	background-color: #c4d0d0;
 }
 #weather .item:nth-child(4) {
 	background-color: #a7b7b6;
 }
-#weather .item:nth-child(4)  header .secondary-content .temp-high {
+#weather .item:nth-child(4)  header .secondary-content .temp-low {
 	background-color: #b0bcbc;
 }
 #weather .item:nth-child(5) {
 	background-color: #c7c9a2;
 }
-#weather .item:nth-child(5)  header .secondary-content .temp-high {
+#weather .item:nth-child(5)  header .secondary-content .temp-low {
 	background-color: #cdceac;
 }
 #weather .item:nth-child(6) {
 	background-color: #fcda6f;
 }
-#weather .item:nth-child(6)  header .secondary-content .temp-high {
+#weather .item:nth-child(6)  header .secondary-content .temp-low {
 	background-color: #ffdc7b;
 }
 #weather .item:nth-child(7) {
 	background-color: #ffbb53;
 }
-#weather .item:nth-child(7)  header .secondary-content .temp-high {
+#weather .item:nth-child(7)  header .secondary-content .temp-low {
 	background-color: #fdc15f;
 }
 
@@ -142,7 +143,7 @@ body {
 }
 
 #weather .item .content .primary-content li p {
-	display: inline-block;
+	display: block;
 	margin: 0;
 	line-height: 94px;
 	float: left;
@@ -159,10 +160,13 @@ body {
 #weather .item .content .primary-content li .temp-low {
 	float: right;
 	box-sizing: border-box;
-	padding-right: 35px;
+	width: 80px;
 	padding-top: 32px;
 	line-height: 25px;
 	text-align: center;
+}
+#weather .item .content .primary-content li .temp-high {
+	margin-right: 20px;
 }
 #weather .item .content .primary-content li:nth-child(1) {
 	background-color: #fcda6f;
@@ -177,6 +181,15 @@ body {
 	background-color: #bbcbca;
 }
 
+#weather .item:last-of-type .content li:last-child .temp-high,
+#weather .item:last-of-type .content li:last-child .temp-low {
+	display: none;
+}
+#weather .item:last-of-type .content .tab-pane:last-child .weather-icon,
+#weather .item:last-of-type .content .tab-pane:last-child .weather-temp {
+	display: none;
+}
+
 #weather .item .content .secondary-content {
 	background-color: #ffbb53;
 	float: left;
@@ -185,6 +198,11 @@ body {
 	margin: 0;
 	text-align: center;
 }
+#weather .item .content .secondary-content .weather-icon {
+	height: 80px;
+	width: 80px;
+}
+
 #weather .secondary-content .weather-temp {
     margin-top: 0;
     padding-bottom: 25px;
