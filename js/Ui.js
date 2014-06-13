@@ -22,9 +22,9 @@
 
 				if (currentTime < 12 && currentTime > 6) {
 					return 'morning'
-				} else if (currentTime >= 12 && currentTime <= 18) {
+				} else if (currentTime >= 12 && currentTime <= 16) {
 					return 'afternoon'
-				}else if (currentTime > 18 && currentTime < 23) {
+				}else if (currentTime > 16 && currentTime < 23) {
 					return 'evening'
 				} else {
 					return 'overnight'

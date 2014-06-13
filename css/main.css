@@ -52,10 +52,13 @@ body {
 }
 
 #weather .item .content {
-	display: none;
+	display: block;
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height 500ms linear;
 }
 #weather .item.active .content {
-	display: block;
+	max-height: 376px;
 }
 
 #weather .item  header .secondary-content span,
@@ -197,6 +200,7 @@ body {
 	height: 100%;
 	margin: 0;
 	text-align: center;
+	transition: all 500ms linear;
 }
 #weather .item .content .secondary-content .weather-icon {
 	height: 80px;
