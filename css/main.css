@@ -55,10 +55,11 @@ body {
 	display: block;
 	overflow: hidden;
 	max-height: 0;
-	transition: max-height 500ms linear;
+	transition: max-height 150ms ease;
 }
 #weather .item.active .content {
 	max-height: 376px;
+	box-shadow: inset 0 2px 2px rgba(0,0,0,0.2);
 }
 
 #weather .item  header .secondary-content span,
@@ -154,6 +155,8 @@ body {
 }
 #weather .item .content .primary-content li {
 	height: 94px;
+	cursor: pointer;
+	overflow: hidden;
 }
 #weather .item .content .primary-content li .title {
 	padding-left: 20px;
@@ -183,6 +186,10 @@ body {
 #weather .item .content .primary-content li:nth-child(4) {
 	background-color: #bbcbca;
 }
+#weather .item .content .primary-content li:active {
+	background-color: rgba(0,0,0,0.2);
+}
+
 
 #weather .item:last-of-type .content li:last-child .temp-high,
 #weather .item:last-of-type .content li:last-child .temp-low {
@@ -200,7 +207,7 @@ body {
 	height: 100%;
 	margin: 0;
 	text-align: center;
-	transition: all 500ms linear;
+	transition: all 500ms ease;
 }
 #weather .item .content .secondary-content .weather-icon {
 	height: 80px;
@@ -227,4 +234,31 @@ body {
 }
 .tab-pane.is-active {
 	display: block;
+}
+
+/* footnote */
+footer .app-info {
+	margin: 0;
+	height: 33px;
+	background-color: #323232;
+	line-height: 33px;
+	text-align: center;
+}
+
+
+@media (max-width: 600px) {
+	#weather .item header,
+	#weather .item .content .primary-content li {
+		height: 50px;
+		font-size: 21px;
+
+
+	}
+	#weather .item header h1,
+	#weather .item .content .primary-content li p {
+		font-size: 21px;
+		line-height: 50px;
+		background-position: 38%;
+	}
+
 }
