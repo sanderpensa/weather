@@ -260,5 +260,28 @@ footer .app-info {
 		line-height: 50px;
 		background-position: 38%;
 	}
-
+	#weather .item.active .content {
+		max-height: 200px;
+		overflow: hidden;
+	}
+	#weather .item  header .secondary-content p,
+	#weather .item .content .primary-content li .temp-high,
+	#weather .item .content .primary-content li .temp-low {
+		padding-top: 14px;
+		line-height: 18px;
+	}
+	#weather .item  header .secondary-content .weather-icon {
+		background-size: 35px;
+	}
+	#weather .item .content .secondary-content {
+		font-size: 21px;
+	}
+	#weather .secondary-content .weather-temp strong {
+		font-size: 30px;
+		visibility: hidden;
+	}
+	#weather .item .content .secondary-content .weather-icon {
+		height: 35px;
+		width: 35px;
+	}
 }

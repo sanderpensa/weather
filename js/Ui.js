@@ -201,6 +201,8 @@
 		wrap.append(article);
 
 		$('.tab-pane[data-tab="' + getCurrentTimeTab() + '"]').addClass('is-active');
+		$('.content .secondary-content').css('background-color',
+		$('.content .primary-content [data-Tab=' + getCurrentTimeTab() ).css('background-color'));
 	};
 
 
